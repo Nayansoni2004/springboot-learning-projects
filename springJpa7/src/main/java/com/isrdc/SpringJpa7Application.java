@@ -22,10 +22,13 @@ public class SpringJpa7Application {
 //		empServ.getAllEmployees(); //hql query is executed
 //		empServ.getEmployeeById(); //hql query method
 		
-		empServ.deleteEmployeeByIdHQL(); //hql query method
+//		empServ.deleteEmployeeByIdHQL(); //hql query method
+
+//		empServ.collectSpecificEmployeeColumns();
 		
-		
-		
+//		empServ.updateEmployee();
+//		empServ.saveEmployee();
+		empServ.updateXEmployee();
 	}
 
 }

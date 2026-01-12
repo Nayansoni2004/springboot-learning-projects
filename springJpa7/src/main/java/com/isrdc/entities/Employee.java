@@ -1,5 +1,12 @@
 package com.isrdc.entities;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,11 +29,20 @@ public class Employee {
 	private Character gender;
 	private String country;
 	
+	@CreationTimestamp
+	@Column(updatable = false)
+	private LocalDate registrationDate;
+	
+	@UpdateTimestamp
+	@Column(insertable = false)
+	private LocalDate updationDate;
+	
 	
 	
 	public Employee() {
 		super();
 	}
+	
 	public Employee(String name, String email, String password, Integer age, Integer experience, Integer salary,
 			Character gender, String country) {
 		super();
@@ -97,5 +113,10 @@ public class Employee {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
+	public LocalDate getRegistrationDate() {
+		return registrationDate;
+	}
+	public void setRegistrationDate(LocalDate registrationDate) {
+		this.registrationDate = registrationDate;
+	}
 }

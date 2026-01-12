@@ -1,5 +1,6 @@
 package com.isrdc.services;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,33 @@ import com.isrdc.repos.EmpRepo;
 public class EmpService {
 	@Autowired
 	private EmpRepo empRepo;
+	
+	public void updateXEmployee() {
+		empRepo.updateEmployee(1, "Pankaj Sinha");
+	}
+	
+	public void saveEmployee() {
+		Employee emp = new Employee("Pankaj Benrjee", "pbnj@gmail.com", "12345", 27, 3, 56000, 'M', "Bharat");
+		empRepo.save(emp);
+	}
+	
+	public void updateEmployee() {
+		empRepo.updateEmployee(6, "Tuntun Mosi");
+		System.out.println("Employee updated!!!");
+	}
+	
+	public void collectSpecificEmployeeColumns() {
+		List<Object[]> emps = empRepo.collectSpecificEmployeeColumns();
+		
+		for(Object[] next : emps) {
+			System.out.println(next[0] + " - " + next[1] + " - " + next[2]);
+		}
+//		List<Employee> emps = empRepo.collectSpecificEmployeeColumns();
+//		
+//		for(Employee emp : emps) {
+//			System.out.println(emp.getName() + " - " + emp.getSalary() + " - " + emp.getGender());
+//		}
+	}
 	
 	//hql query method
 	public void deleteEmployeeByIdHQL() {

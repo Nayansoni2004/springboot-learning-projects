@@ -25,6 +25,15 @@ public interface EmpRepo extends CrudRepository<Employee, Integer>{
 	@Query(value = "delete from employees where employee_id= :employeeId", nativeQuery = true)
 	public void deleteEmployeeById(Integer employeeId);
 	
+	@Query(value = "select name,salary,gender from employees", nativeQuery = true)
+//	public List<Employee> collectSpecificEmployeeColumns();
+	public List<Object[]> collectSpecificEmployeeColumns();
+	
+	@Transactional
+	@Modifying
+	@Query(value= "update employees set name=:empName where employee_id=:empId", nativeQuery=true)
+	public void updateEmployee(Integer empId, String empName);
+	
 	//HQL(hibernate query language)
 	@Query("From Employee")
 	public List<Employee> getAllEmployees();
