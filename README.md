@@ -53,8 +53,8 @@ This repo will be **continuously updated over the next few months** as I learn a
 
 ### 🛠 Tools & Environment
 
-* Spring Tool Suite (STS)
-* IntelliJ IDEA
+* Spring Tool Suite (STS) 5.0.0.RELEASE
+* IntelliJ IDEA 2025.1.7 (Community Edition)
 * Embedded Tomcat server
 * Maven build tool
 
@@ -65,10 +65,10 @@ This repo will be **continuously updated over the next few months** as I learn a
 ```
 springboot-learning-projects/
 │
-├── project-1/
-├── project-2/
-├── spring-jpa-demo/
-├── spring-data-jpa-examples/
+├── project1/
+├── project2/
+├── springjpa9/
+├── springjpa10/
 └── README.md
 ```
 
