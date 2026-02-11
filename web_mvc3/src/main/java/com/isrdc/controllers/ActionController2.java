@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ActionController2 {
-	//http://localhost:9090/one
+	//http://localhost:9090/two
 	@GetMapping("/two")
 	public String requestTwo(Model model) {
 		
