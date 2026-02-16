@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form</title>
+	</head>
+	<body>
+		<form action="save" th:object="${user}" method="post">
+			<table border="1" width="50%" align="center">
+				<tr>
+					<td>
+						<label for="nm">Name</label>
+					</td>
+					<td>
+						<input type="text" th:field="*{name}" id="nm">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="em">Email</label>
+					</td>
+					<td>
+						<input type="email" th:field="*{email}" id="em">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="ph">Phone</label>
+					</td>
+					<td>
+						<input type="tel" th:field="*{phone}" id="ph">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Save Record">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
