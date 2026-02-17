@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spring Web Mvc 13</title>
+	</head>
+	
+	<body>
+		<table border="1" align="center" width="70%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+					<th>College</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user:${usersList}">
+					<td th:text="${user.name}"></td>
+					<td>
+						<div th:if="${user.age} < 5" style="background-color: green;" th:text="${user.age}"></div>
+						<div th:unless="${user.age} < 5" style="background-color: red;" th:text="${user.age}"></div>
+					</td>
+					<td th:switch="${user.gender}">
+						<span th:case="M" th:text="Male"></span>
+						<span th:case="F" th:text="Female"></span>
+						<span th:case="O" th:text="Other"></span>
+					</td>
+					<td th:text="${user.college}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
