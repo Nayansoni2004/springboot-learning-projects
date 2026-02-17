@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>All Records</title>
+	</head>
+	
+	<body>
+		<table border="2" align="center" width="70%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Marks</th>
+					<th>College</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student: ${studentsList}">
+					<td th:text="${student.name}"></td>
+					<td th:text="${student.age}"></td>
+					<td th:text="${student.marks}"></td>
+					<td th:text="${student.college}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
