@@ -16,6 +16,20 @@ public class UserService {
 	@Autowired
 	private UserRepo userRepo;
 	
+	//method to delete user
+	public void deleteUser(Integer userId) {
+		userRepo.deleteById(userId);
+	}
+	
+	//method to update user
+	public void updateUser(UserDto userDto) {
+		User user = new User();
+		
+		BeanUtils.copyProperties(userDto, user);
+		
+		userRepo.save(user); //there's no update method in JpaRepository so usually when updating record we call save() method.
+	}
+	
 	//method to retrieve all records
 	public ArrayList<UserDto> collectAllUsers() {
 		List<User> users = userRepo.findAll();
